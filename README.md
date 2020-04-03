@@ -17,7 +17,7 @@ Demonstration videos of the Assignment can be found at the following links. Any 
 
 ## Getting started
 
-All the following tasks have to be run into an Ubuntu machine with a working ROS + Gazebo environment. The ROS package has to be built with `catkin` in order to be executed.
+All the following tasks have to be run into an Ubuntu machine with a working ROS + Gazebo environment. The ROS package has to be built with `catkin` using the name `usi_myt` in order to be executed.
 
 
 ### Compulsory Tasks
