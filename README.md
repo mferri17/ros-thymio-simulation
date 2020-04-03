@@ -4,12 +4,12 @@ Università della Svizzera Italiana
 
 Robotics 2020 | **Assignment 2**
 
-Authors: **Marco Ferri** & **Nadia Younis**
+Team Ganymede: **Marco Ferri** & **Nadia Younis**
 
 
 ## Demos
 
-Demonstration videos of the Assignment can be found as follows. Any comment about them is available in the next sections.
+Demonstration videos of the Assignment can be found at the following links. Any comment about them is available in the next sections.
 - Compulsory Tasks: https://drive.google.com/open?id=1dUeoM8Tyf3Pm_AVI5jRvs_GjQvNQ4Gmg
 - Bonus Tasks:      https://drive.google.com/open?id=1_h5_a9iirtNDcbzDH26-9EAjxXf5W89B
 
