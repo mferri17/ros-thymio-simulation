@@ -16,7 +16,7 @@ class ThymioController:
         """Initialization."""
 
         # initialize the node
-        rospy.init_node('thymio_controller_task3')
+        rospy.init_node('thymio_controller_task5')
 
         self.name = rospy.get_param('~robot_name')
         rospy.loginfo('Controlling %s' % self.name)
@@ -143,60 +143,36 @@ class ThymioController:
                 self.proximity_right.range < self.proximity_right.max_range and \
                 abs(self.proximity_left.range - self.proximity_right.range) < tollerance
 
+    def collision(self, distance):
+        return  self.proximity_center.range < distance or \
+                self.proximity_left.range < distance or \
+                self.proximity_right.range < distance
+
 
     def run(self):
         """Controls the Thymio."""
 
-        ### TASK 2
-
         wall_distance = 0.08 # meters
 
-        rospy.loginfo('Moving forward...')
+        while not rospy.is_shutdown():
+            rospy.loginfo('Moving forward...')
 
-        while not rospy.is_shutdown() and self.proximity_center.range >= wall_distance:
-            self.move()
-            self.rate.sleep()
+            while not rospy.is_shutdown() and not self.collision(wall_distance):
+                self.move(0.15, np.random.uniform(-2,+2))
+                self.rate.sleep()
+            
+            self.stop()
+            rospy.loginfo('Collision: trying to find a free path...')
 
-        self.stop()
-        rospy.loginfo('CHECKPOINT Task 2: Collision (%.2f meters distant from the wall)' % wall_distance)
-        rospy.loginfo('Trying to face the wall exactly...')
+            while not rospy.is_shutdown() and self.collision(wall_distance):
+                if self.is_exactly_facing_an_obstacle(tollerance = 0.05): # obstacle in front of the robot
+                    self.rotate(180)
+                elif self.proximity_right.range <= self.proximity_left.range: # obstacle at right
+                    self.move(0, 1) # turning left
+                else: # obstacle at left
+                    self.move(0, -1) # turning right
 
-        while not rospy.is_shutdown() and not self.is_exactly_facing_an_obstacle():
-            if self.proximity_left.range <= self.proximity_right.range:
-                self.move(0, 0.2) # turning left
-            else:
-                self.move(0, -0.2) # turning right
-
-        self.stop()
-        rospy.loginfo('CHECKPOINT Task 2: Facing the wall exactly')
-        rospy.loginfo('Waiting a few seconds...')
-        rospy.sleep(2) # sleep for 2 seconds
-
-        ### TASK 3
-
-        rospy.loginfo('Turning by 180 degrees...')
-        self.rotate(180)
-
-        self.stop()
-        rospy.loginfo('CHECKPOINT Task 3: The wall is exactly behind')
-
-        from_wall = 2
-        (init_x, init_y, init_theta) = self.human_readable_pose2d(self.pose)
-        goal_x = from_wall * math.cos(init_theta) + init_x
-        goal_y = from_wall * math.sin(init_theta) + init_y
-
-        rospy.loginfo('Start walking for having the wall %.2f meters far behind...' % from_wall)
-        rospy.loginfo('Starting pose is: \t init_x %f \t init_y %f' % (init_x, init_y))
-
-        while not rospy.is_shutdown() and self.euclidean_distance_2d(goal_x, goal_y) >= wall_distance:
-            self.move()
-
-        self.stop()
-
-        (final_x, final_y, final_theta) = self.human_readable_pose2d(self.pose)
-        rospy.loginfo('Final pose is: \t\t final_x %f \t final_y %f' % (final_x, final_y))
-        rospy.loginfo('%f meters distant from the starting pose (the one near the wall)' % self.euclidean_distance_2d(init_x, init_y))
-        rospy.loginfo('CHECKPOINT Task 3: This means the robot is almost 2 meters distant from the wall')
+            self.stop()
 
 
 

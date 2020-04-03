@@ -35,15 +35,30 @@
     <arg name="proximity_max_range" default="0.12"/>
     <arg name="proximity_resolution" default="0.005"/>
     <arg name="proximity_fov" default="0.3"/>
-
   </include>
 
-  <!-- <include file="$(find thymioid_description)/launch/gazebo_bringup.launch">
+  <include file="$(find thymioid_description)/launch/gazebo_bringup.launch">
     <arg name="name" value="$(arg name2)"/>
-    <arg name="pose" value="-x 2 -y 2 -z 0 -yaw 1.3"/>
+
+    <arg name="pose" value="-x 0 -y 1 -z 0 -Y 5.5"/>
+    <arg name="odom_max_rate" default="20.0"/>
+
+    <arg name="publish_ground_truth" default="true"/>
+    <arg name="ground_truth_frame_id" default="/world"/>
+    <arg name="ground_truth_frame_rate" default="30.0"/>
+
+    <arg name="left_wheel_friction" value="1"/>
+    <arg name="right_wheel_friction" value="1"/>
+
+    <arg name="camera_is_fixed" default="false"/>
+    <arg name="camera_pitch" default="0.2618"/>
+
+    <arg name="proximity_max_range" default="0.12"/>
+    <arg name="proximity_resolution" default="0.005"/>
+    <arg name="proximity_fov" default="0.3"/>
   </include>
 
-  <include file="$(find thymio_description)/launch/joy_teleop.launch">
+  <!-- <include file="$(find thymio_description)/launch/joy_teleop.launch">
     <arg name="namespace" value="thymio10"/>
   </include> -->
 
