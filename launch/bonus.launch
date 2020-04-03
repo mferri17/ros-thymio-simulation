@@ -4,12 +4,12 @@
 <arg name="robot_name" default="thymio10" />
 <arg name="robot_name2" default="thymio11" />
 
-<!-- nodes are exectued -->
-<node pkg="usi_myt" name="thymio_controller_task5_robot1" type="thymio_controller_task5.py" output="screen">
+<!-- nodes are executed -->
+<node pkg="usi_myt" name="assignment2_task5_robot1" type="assignment2_task5.py" output="screen">
     <!-- paramters must be set in the launchfile -->
     <param name="robot_name" value="/$(arg robot_name)" />
 </node>
-<node pkg="usi_myt" name="thymio_controller_task5_robot2" type="thymio_controller_task5.py" output="screen">
+<node pkg="usi_myt" name="assignment2_task5_robot2" type="assignment2_task5.py" output="screen">
     <!-- paramters must be set in the launchfile -->
     <param name="robot_name" value="/$(arg robot_name2)" />
 </node>
