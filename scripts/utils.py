@@ -38,7 +38,7 @@ class ThymioController:
         self.proximity_center.range = 1
         self.proximity_left.range = 1
         self.proximity_right.range = 1
-        self.rate = rospy.Rate(10) # set node update frequency in Hz
+        self.rate = rospy.Rate(10) # set update frequency in Hz
 
 
     def update_proximity_center(self, data):
@@ -130,7 +130,6 @@ class ThymioController:
         # Setting the current time for distance calculus
         t0 = rospy.Time.now().to_sec()
         current_angle = 0
-        rospy.loginfo(relative_angle)
 
         while not rospy.is_shutdown() and current_angle < relative_angle:
             self.move(0, angular_speed)

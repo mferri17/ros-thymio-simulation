@@ -15,14 +15,14 @@ class ThymioController_Task5(ThymioController):
         ### TASK 4 and 5 are handled the same
 
         while not rospy.is_shutdown():
-            rospy.loginfo('Moving forward...')
+            rospy.loginfo('%s Moving forward...' % self.name)
 
             while not rospy.is_shutdown() and not self.collision():
                 self.move(0.15, np.random.uniform(-2,+2))
                 self.rate.sleep()
             
             self.stop()
-            rospy.loginfo('Collision: trying to find a free path...')
+            rospy.loginfo('%s Collision: trying to find a free path...' % self.name)
 
             while not rospy.is_shutdown() and self.collision():
                 if self.is_exactly_facing_an_obstacle(tollerance = 0.05): # obstacle in front of the robot
