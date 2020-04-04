@@ -1,14 +1,14 @@
 ~~~~~~~~~~~~ USI-THYMIO-SIMULATION ~~~~~~~~~~~~
 
 Team GANYMEDE: 
-Marco Ferri & Nadia Younis
+- Marco Ferri
+- Nadia Younis
 
 
 ------------- DEMO -------------
 
 Demonstration videos of the Assignment can be found at the following links. 
-Each Task has been done.
-Any comment about them is available in the next sections.
+Each Task has been done. Any comment about them is available in the next sections.
 - Compulsory Tasks: https://drive.google.com/open?id=1dUeoM8Tyf3Pm_AVI5jRvs_GjQvNQ4Gmg
 - Bonus Tasks:      https://drive.google.com/open?id=1_h5_a9iirtNDcbzDH26-9EAjxXf5W89B
 
@@ -22,8 +22,8 @@ For executing Tasks 2 and 3, the following commands have to be run in the termin
 Robot's name is set automatically to the default value `thymio10`. 
 Even though a second thymio (`thymio11`) will spawn, only the first one will be controlled.
 
-Additional information about what is going on during the execution 
-can be found in the terminal shown in the video: https://drive.google.com/open?id=1dUeoM8Tyf3Pm_AVI5jRvs_GjQvNQ4Gmg
+Additional information about what is going on during the execution can be found 
+in the terminal shown in the video: https://drive.google.com/open?id=1dUeoM8Tyf3Pm_AVI5jRvs_GjQvNQ4Gmg
 
 
 If you want to execute task 1 instead, then these two commands are required:

@@ -2,7 +2,10 @@
 
 Università della Svizzera Italiana  
 Robotics 2020 | **Assignment 2**  
-Team Ganymede: **Marco Ferri** & **Nadia Younis**
+
+Team Ganymede: 
+- **Marco Ferri**
+- **Nadia Younis**
 
 
 ## Demos
