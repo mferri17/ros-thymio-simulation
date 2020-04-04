@@ -1,29 +1,26 @@
 # USI-THYMIO-SIMULATION
 
-Università della Svizzera Italiana
-
-Robotics 2020 | **Assignment 2**
-
+Università della Svizzera Italiana  
+Robotics 2020 | **Assignment 2**  
 Team Ganymede: **Marco Ferri** & **Nadia Younis**
 
 
 ## Demos
 
-Demonstration videos of the Assignment can be found at the following links. Any comment about them is available in the next sections.
-- Compulsory Tasks: https://drive.google.com/open?id=1dUeoM8Tyf3Pm_AVI5jRvs_GjQvNQ4Gmg
-- Bonus Tasks:      https://drive.google.com/open?id=1_h5_a9iirtNDcbzDH26-9EAjxXf5W89B
+Demonstration videos of the Assignment can be found at the following links. Each Task has been done. Any comment about them is available in the next sections.
+- [Compulsory Tasks](https://drive.google.com/open?id=1dUeoM8Tyf3Pm_AVI5jRvs_GjQvNQ4Gmg)
+- [Bonus Tasks](https://drive.google.com/open?id=1_h5_a9iirtNDcbzDH26-9EAjxXf5W89B)
 
 
 
 ## Getting started
 
-All the following tasks have to be run into an Ubuntu machine with a working ROS + Gazebo environment. The ROS package has to be built with `catkin` using the name `usi_myt` in order to be executed.
+All the following tasks have to be run into an Ubuntu machine with a working ROS + Gazebo environment. The ROS package has to be built with `catkin` in order to be executed.
 
 
 ### Compulsory Tasks
 
 For executing Tasks 2 and 3, the following commands have to be run in the terminal:
-
 ```
 roslaunch usi_myt thymio_gazebo_bringup.launch world:=wall
 roslaunch usi_myt compulsory.launch
@@ -34,6 +31,12 @@ Robot's name is set automatically to the default value `thymio10`. Even though a
 In case the simulation has to be run multiple times, then also the command `rosservice call /gazebo/reset_simulation` is needed for resetting the Gazebo simulation environment, returning the Thymio to the original position in order to be faced directly against the wall. The original `wall` world provided has been modified to put the wall nearer to the spawn position and to be placed diagonally with respect to the x-axis.
 
 Additional information about what is going on during the execution can be found in the terminal shown in the [demo video](https://drive.google.com/open?id=1dUeoM8Tyf3Pm_AVI5jRvs_GjQvNQ4Gmg).
+
+Task 1 is instead showed in [this video](https://drive.google.com/open?id=1UaJLM7M7bB0tV84vvJOh9_US36a3J_vd). If you want to execute it, then these two commands are required:
+```
+roslaunch usi_myt thymio_gazebo_bringup.launch world:=empty
+roslaunch usi_myt task1.launch
+```
 
 
 ### Bonus Tasks
