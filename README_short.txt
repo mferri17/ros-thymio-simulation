@@ -44,5 +44,5 @@ how the robots are able to detect and avoid obstacles properly while randomly ex
 
 Please note that the `arena` world used in the video has been slightly modified: 
 obstacles have been added or moved in order to create a convenient environment for demonstrating the robots' behavior more easily. 
-The world found in the source code (which you will find when executing it) is instead the original that has been provided us.
+However, the world in the source code (which you will find when executing it) is instead the original that has been provided us.
 
